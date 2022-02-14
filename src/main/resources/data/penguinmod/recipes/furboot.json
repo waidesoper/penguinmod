@@ -1,0 +1,26 @@
+{
+  "group": "penguinmod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "2": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "3": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "5": {
+      "item": "penguinmod:penguinfeather"
+    }
+  },
+  "result": {
+    "item": "penguinmod:furarmor_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "group": "penguinmod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "2": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "3": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "4": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "5": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "6": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "7": {
+      "item": "penguinmod:penguinfeather"
+    },
+    "8": {
+      "item": "penguinmod:penguinfeather"
+    }
+  },
+  "result": {
+    "item": "penguinmod:furarmor_chestplate",
+    "count": 1
+  }
+}

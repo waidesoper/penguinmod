@@ -1,0 +1,29 @@
+{
+  "penguinnoises": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "penguinmod:penguin_sounds_from_close_up",
+        "stream": false
+      }
+    ]
+  },
+  "penguinnoises2.0": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "penguinmod:better_penguin_sound",
+        "stream": false
+      }
+    ]
+  },
+  "quiet": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "penguinmod:quietbetter_penguin_sound",
+        "stream": false
+      }
+    ]
+  }
+}

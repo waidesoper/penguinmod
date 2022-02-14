@@ -1,0 +1,26 @@
+{
+  "group": "penguinmod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345"
+  ],
+  "key": {
+    "1": {
+      "item": "penguinmod:goldenfeathers"
+    },
+    "3": {
+      "item": "penguinmod:goldenfeathers"
+    },
+    "4": {
+      "item": "penguinmod:goldenfeathers"
+    },
+    "5": {
+      "item": "penguinmod:goldenfeathers"
+    }
+  },
+  "result": {
+    "item": "penguinmod:crown_helmet",
+    "count": 1
+  }
+}
