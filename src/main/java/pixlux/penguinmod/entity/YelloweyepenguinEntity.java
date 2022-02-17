@@ -121,8 +121,8 @@
      }
  
 
-     public AttributeSupplier getCreatureAttribute() {
-       return AttributeSupplier.builder().build();
+     public AttributeSupplier.Builder createAttributes() {
+       return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, (double)0.3F).add(Attributes.MAX_HEALTH, 8.0D).add(Attributes.ATTACK_DAMAGE, 2.0D);
      }
      
      protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
@@ -154,7 +154,9 @@
      
      public boolean hurt(DamageSource source, float amount) {
        if (source == DamageSource.FALL)
-         return false; 
+         return false;
+       if (source == DamageSource.DROWN)
+           return false;
        if (source == DamageSource.FREEZE)
          return false; 
        return super.hurt(source, amount);
@@ -186,7 +188,7 @@
              retval = super.mobInteract(sourceentity, hand);
            } 
          }
-       } else if (this.isFood(itemstack)) {
+       } else if (this.isEdible(itemstack)) {
          this.usePlayerItem(sourceentity, hand, itemstack);
          if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, sourceentity)) {
            this.setOwnerUUID(sourceentity.getUUID());
@@ -215,9 +217,9 @@
      }
  
      
-     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
-       CustomEntity retval = (CustomEntity)YelloweyepenguinEntity.entity.create((Level) serverWorld);
-       retval.spawnChildFromBreeding(serverWorld, retval);
+     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageable) {
+       CustomEntity retval = (CustomEntity) entity.create( serverLevel);
+       retval.spawnChildFromBreeding(serverLevel, retval);
        
        return (AgeableMob)retval;
      }

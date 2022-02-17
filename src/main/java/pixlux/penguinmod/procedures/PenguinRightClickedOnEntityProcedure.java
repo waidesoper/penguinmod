@@ -30,10 +30,10 @@
        if (event.getHand() != sourceentity.getUsedItemHand()) {
          return;
        }
-       double i = event.getPos().getX();
-       double j = event.getPos().getY();
-       double k = event.getPos().getZ();
-       Level world = event.getWorld();
+       double i = event.get().getX();
+       double j = event.get().getY();
+       double k = event.get().getZ();
+       Level world = event.getLevel();
        Map<String, Object> dependencies = new HashMap<>();
        dependencies.put("x", Double.valueOf(i));
        dependencies.put("y", Double.valueOf(j));
