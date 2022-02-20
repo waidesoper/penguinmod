@@ -1,25 +1,19 @@
 
 package pixlux.penguinmod.entity;
 
-import net.minecraft.Util;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.util.Mth;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.behavior.VillageBoundRandomStroll;
-import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.animal.Chicken;
-import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -30,7 +24,6 @@ import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
@@ -110,7 +103,7 @@ public class BigpenguinEntity extends PenguinmodModElements.ModElement {
 			super(type, world);
 			xpReward = 3;
 			setNoAi(false);
-			this.setPathfindingMalus(BlockPathTypes.WATER, 0);
+		/*	this.setPathfindingMalus(BlockPathTypes.WATER, 0);
 			this.moveControl = new MoveControl(this) {
 				@Override
 				public void tick() {
@@ -143,7 +136,7 @@ public class BigpenguinEntity extends PenguinmodModElements.ModElement {
 					}
 				}
 			};
-			this.navigator = new SwimmerPathNavigator(this, this.level);
+			this.navigator = new SwimmerPathNavigator(this, this.level);*/
 		}
 
 		@Override

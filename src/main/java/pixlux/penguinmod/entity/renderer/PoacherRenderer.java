@@ -9,7 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.Entity;
-import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.client.renderer.model.ModelPart;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.MobRenderer;
 
@@ -24,7 +24,7 @@ public class PoacherRenderer {
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
-			RenderingRegistry.registerEntityRenderingHandler(PoacherEntity.entity, renderManager -> {
+			EntityRenderers.register(PoacherEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new Modelpoacher(), 0.6f) {
 
 					@Override
@@ -40,47 +40,47 @@ public class PoacherRenderer {
 	// Exported for Minecraft version 1.15 - 1.16 with MCP mappings
 	// Paste this class into your mod and generate all required imports
 	public static class Modelpoacher extends EntityModel<Entity> {
-		private final ModelRenderer head;
-		private final ModelRenderer hat;
-		private final ModelRenderer nose;
-		private final ModelRenderer body;
-		private final ModelRenderer left_arm;
-		private final ModelRenderer right_arm;
-		private final ModelRenderer left_leg;
-		private final ModelRenderer right_leg;
+		private final ModelPart head;
+		private final ModelPart hat;
+		private final ModelPart nose;
+		private final ModelPart body;
+		private final ModelPart left_arm;
+		private final ModelPart right_arm;
+		private final ModelPart left_leg;
+		private final ModelPart right_leg;
 
 		public Modelpoacher() {
 			textureWidth = 64;
 			textureHeight = 64;
-			head = new ModelRenderer(this);
+			head = new ModelPart(this);
 			head.setRotationPoint(0.0F, 0.0F, 0.0F);
-			head.setTextureOffset(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, 0.0F, false);
-			head.setTextureOffset(54, 15).addBox(-5.0F, -8.0F, -2.0F, 1.0F, 4.0F, 4.0F, 0.0F, false);
-			head.setTextureOffset(54, 16).addBox(4.0F, -8.0F, -2.0F, 1.0F, 4.0F, 4.0F, 0.0F, false);
-			head.setTextureOffset(58, 0).addBox(-5.0F, -12.0F, -1.0F, 1.0F, 4.0F, 2.0F, 0.0F, false);
-			head.setTextureOffset(44, 0).addBox(-4.0F, -12.0F, -1.0F, 8.0F, 1.0F, 2.0F, 0.0F, false);
-			head.setTextureOffset(58, 0).addBox(4.0F, -12.0F, -1.0F, 1.0F, 4.0F, 2.0F, 0.0F, false);
-			hat = new ModelRenderer(this);
+			head.texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, 0.0F, false);
+			head.texOffs(54, 15).addBox(-5.0F, -8.0F, -2.0F, 1.0F, 4.0F, 4.0F, 0.0F, false);
+			head.texOffs(54, 16).addBox(4.0F, -8.0F, -2.0F, 1.0F, 4.0F, 4.0F, 0.0F, false);
+			head.texOffs(58, 0).addBox(-5.0F, -12.0F, -1.0F, 1.0F, 4.0F, 2.0F, 0.0F, false);
+			head.texOffs(44, 0).addBox(-4.0F, -12.0F, -1.0F, 8.0F, 1.0F, 2.0F, 0.0F, false);
+			head.texOffs(58, 0).addBox(4.0F, -12.0F, -1.0F, 1.0F, 4.0F, 2.0F, 0.0F, false);
+			hat = new ModelPart(this);
 			hat.setRotationPoint(0.0F, 24.0F, 0.0F);
-			nose = new ModelRenderer(this);
+			nose = new ModelPart(this);
 			nose.setRotationPoint(0.0F, -2.0F, 0.0F);
-			nose.setTextureOffset(24, 0).addBox(-1.0F, -1.0F, -6.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
-			body = new ModelRenderer(this);
+			nose.texOffs(24, 0).addBox(-1.0F, -1.0F, -6.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+			body = new ModelPart(this);
 			body.setRotationPoint(0.0F, 0.0F, 0.0F);
-			body.setTextureOffset(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, 0.0F, false);
-			body.setTextureOffset(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 18.0F, 6.0F, 0.5F, false);
-			left_arm = new ModelRenderer(this);
+			body.texOffs(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, 0.0F, false);
+			body.texOffs(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 18.0F, 6.0F, 0.5F, false);
+			left_arm = new ModelPart(this);
 			left_arm.setRotationPoint(-5.0F, 2.0F, 0.0F);
-			left_arm.setTextureOffset(40, 46).addBox(9.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
-			right_arm = new ModelRenderer(this);
+			left_arm.texOffs(40, 46).addBox(9.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
+			right_arm = new ModelPart(this);
 			right_arm.setRotationPoint(5.0F, 2.0F, 0.0F);
-			right_arm.setTextureOffset(40, 46).addBox(-13.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
-			left_leg = new ModelRenderer(this);
+			right_arm.texOffs(40, 46).addBox(-13.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+			left_leg = new ModelPart(this);
 			left_leg.setRotationPoint(-2.0F, 12.0F, 0.0F);
-			left_leg.setTextureOffset(0, 22).addBox(2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
-			right_leg = new ModelRenderer(this);
+			left_leg.texOffs(0, 22).addBox(2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
+			right_leg = new ModelPart(this);
 			right_leg.setRotationPoint(2.0F, 12.0F, 0.0F);
-			right_leg.setTextureOffset(0, 22).addBox(-6.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+			right_leg.texOffs(0, 22).addBox(-6.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
 		}
 
 		@Override
@@ -96,7 +96,7 @@ public class PoacherRenderer {
 			right_leg.render(matrixStack, buffer, packedLight, packedOverlay);
 		}
 
-		public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		public void setRotationAngle(ModelPart modelRenderer, float x, float y, float z) {
 			modelRenderer.rotateAngleX = x;
 			modelRenderer.rotateAngleY = y;
 			modelRenderer.rotateAngleZ = z;

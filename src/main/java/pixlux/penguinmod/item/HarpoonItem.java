@@ -17,6 +17,7 @@
  import net.minecraft.world.entity.MobCategory;
  import net.minecraft.world.entity.player.Player;
  import net.minecraft.world.entity.projectile.AbstractArrow;
+ import net.minecraft.world.entity.projectile.ItemSupplier;
  import net.minecraft.world.item.*;
  import net.minecraft.world.level.Level;
  import net.minecraft.world.phys.EntityHitResult;
@@ -36,7 +37,7 @@
  public class HarpoonItem extends PenguinmodModElements.ModElement {
    @ObjectHolder("penguinmod:harpoon")
    public static final Item block = null;
-   public static final EntityType arrow = (EntityType)EntityType.Builder.<ArrowCustomEntity>of(ArrowCustomEntity::new, MobCategory.MISC)
+   public static final EntityType arrow = EntityType.Builder.<ArrowCustomEntity>of(ArrowCustomEntity::new, MobCategory.MISC)
      .setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
      .sized(0.5F, 0.5F).build("entitybulletharpoon").setRegistryName("entitybulletharpoon");
    public HarpoonItem(PenguinmodModElements instance) {
@@ -90,7 +91,7 @@
    
    @OnlyIn(value = Dist.CLIENT)
    public static class ArrowCustomEntity
-     extends AbstractArrow {
+     extends AbstractArrow{
      public ArrowCustomEntity(PlayMessages.SpawnEntity packet, Level world) {
        super(HarpoonItem.arrow, world);
      }
